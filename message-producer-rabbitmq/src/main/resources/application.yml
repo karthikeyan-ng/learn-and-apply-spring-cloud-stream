@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        helloOutChannel:
+          destination: helloexchange
+          #group: order
+          binder: rabbit1
+      binders:
+        rabbit1:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                addresses: amqp://cidvquen:fh_90S6ppDLDTO-c1Z5NapGmk_ZFmyH3@kangaroo.rmq.cloudamqp.com/cidvquen
+#                host: kangaroo.rmq.cloudamqp.com/cidvquen
+                port: 5672
+                username: cidvquen
+                password: fh_90S6ppDLDTO-c1Z5NapGmk_ZFmyH3
+
+server:
+  port: 8080
